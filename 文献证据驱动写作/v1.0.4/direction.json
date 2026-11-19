@@ -1,0 +1,19 @@
+{
+ "direction": "uncertainty-expression",
+ "causal_markers": [
+  "导致",
+  "引起",
+  "证明了",
+  "决定",
+  "引发"
+ ],
+ "absolute_markers": [
+  "首次",
+  "唯一",
+  "彻底",
+  "必然",
+  "完全治愈",
+  "无风险",
+  "没有任何副作用"
+ ]
+}
