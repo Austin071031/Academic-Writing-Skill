@@ -6,3 +6,4 @@
 - check_consistency.py 五项机读核验：数字材料溯源、引用悬空/冗余、必备章节齐全、占位符闭环、文献字段提示。
 - 支持六类任务：生成/改写/校对/结构化/双语/引用管理；渲染链 pandoc→python-docx、LibreOffice→xelatex 逐级降级如实记录。
 - 交付：SKILL.md、README、6 份 references（含合成示例）、GITHUB_URL.txt。
+- 提交：playground attempt 88991（challenge-308a6fdc，写作01｜学术论文写作）；评测端复跑返回 evaluation_error，待人工评审/重提，详见 SUBMISSION.md。
