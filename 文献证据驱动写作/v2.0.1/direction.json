@@ -1,0 +1,5 @@
+{
+ "direction": "claim-source-linking",
+ "gain_audit": true,
+ "failure_modes": "references/failure_modes.md"
+}
