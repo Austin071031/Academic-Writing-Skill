@@ -1,0 +1,21 @@
+{
+ "baseline": "v1.0.1",
+ "candidate": "v2.0.2",
+ "assets_missing": [],
+ "rules": {
+  "baseline": 7,
+  "candidate": 8,
+  "removed": []
+ },
+ "contract_diff": [],
+ "behavior_diff": [],
+ "seconds": {
+  "baseline": 1.08,
+  "candidate": 1.42
+ },
+ "model_calls": {
+  "baseline": "≤12/案例",
+  "candidate": "≤12/案例（新增脚本 0 次模型调用）"
+ },
+ "verdict": "pass"
+}
