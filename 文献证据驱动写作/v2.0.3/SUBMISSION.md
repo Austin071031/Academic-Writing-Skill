@@ -2,12 +2,12 @@
 
 | 项目 | 内容 |
 |-|-|
-| **Playground Attempt ID** | **（待提交）** |
+| **Playground Attempt ID** | **92086** |
 | 挑战赛 | challenge-b810ef56（写作05｜文献证据驱动写作） |
-| 提交时间 | （待提交） |
-| 状态 | 待提交 |
+| 提交时间 | 2026-11-20T05:50:00+00:00 |
+| 状态 | 已提交（queued） |
 | 得分 | 待出分 |
-| 查询命令 | `playground status --attempt-id <ID>` |
+| 查询命令 | `playground status --attempt-id 92086` |
 
 ## 版本与提交的对应关系
 
