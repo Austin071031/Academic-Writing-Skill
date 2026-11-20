@@ -1,0 +1,5 @@
+{
+ "direction": "claim-source-linking",
+ "instruction_audit": true,
+ "genre_profiles": "references/genre_profiles.md"
+}
