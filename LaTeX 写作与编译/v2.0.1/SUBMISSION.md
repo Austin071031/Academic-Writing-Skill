@@ -2,12 +2,12 @@
 
 | 项目 | 内容 |
 |-|-|
-| **Playground Attempt ID** | **（待提交）** |
+| **Playground Attempt ID** | **101509** |
 | 挑战赛 | product-arena-07-865de7e4（写作13｜LaTeX 写作与编译） |
-| 提交时间 | （待提交） |
-| 状态 | 待提交 |
+| 提交时间 | 2026-11-23（UTC） |
+| 状态 | 已提交（submitted，待评测） |
 | 得分 | 待出分 |
-| 查询命令 | `playground status --attempt-id <ID>` |
+| 查询命令 | `playground status --attempt-id 101509` |
 
 ## 版本与提交的对应关系
 

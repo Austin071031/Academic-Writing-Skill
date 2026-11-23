@@ -5,8 +5,8 @@
 | **Playground Attempt ID** | **90655** |
 | 挑战赛 | product-arena-07-865de7e4（写作13｜LaTeX 写作与编译） |
 | 提交时间 | 2026-11-19T13:12:43+00:00 |
-| 状态 | 已提交（排队中） |
-| 得分 | 待出分（出分后回填本行与根 README 索引表） |
+| 状态 | scored（outcome=partial） |
+| 得分 | **55**（2026-11-23 平台复核回填） |
 | 查询命令 | `playground status --attempt-id 90655` |
 
 ## 版本与提交的对应关系
