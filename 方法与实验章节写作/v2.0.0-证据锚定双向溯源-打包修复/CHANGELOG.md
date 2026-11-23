@@ -10,3 +10,4 @@
   （result.json 键名结构、产物清单、锚点语法）——回归证据见本目录 regression_report.json。
 - 起因：v1 批次 5 次提交全部 evaluation_error（attempt 89818/89821/89823/89824/89826，
   platform_verified）；同窗口写作10 精简包 4/5 正常出分，旁证指向包内文本文件超 50。
+- 提交：playground attempt 101409（product-arena-05-64faa4a2，方法与实验章节写作）
