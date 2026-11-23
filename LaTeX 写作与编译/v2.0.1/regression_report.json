@@ -1,0 +1,34 @@
+{
+  "baseline": "v1.0.4",
+  "candidate": "v2.0.1",
+  "assets_missing": [],
+  "assets_check": "v1.0.4 全部 9 脚本与文档组保留且 SKILL.md 仍引用（diff 仅 +1 脚本 +1 direction.json +assemble REPORTS +1 行 +SKILL.md Phase F 段）",
+  "rules": {
+    "baseline_scripts": 9,
+    "candidate_scripts": 10,
+    "removed": []
+  },
+  "contract_diff": {
+    "removed_keys": [],
+    "added_keys": []
+  },
+  "proxy_cases": {
+    "normal": {
+      "validate": "PASS",
+      "fast_lane": "7/7 OK，1.6s 落盘保底 partial（含 PDF）"
+    },
+    "degraded": {
+      "validate": "PASS",
+      "fast_lane": "无主文件仍 4/7 步成功，诚实 partial"
+    },
+    "overbudget": {
+      "validate": "PASS",
+      "fast_lane": "106 错如实报告，partial 含诊断"
+    }
+  },
+  "seconds": {
+    "fast_lane_total": "0.6-1.7s（不含编译等待时 <1s）"
+  },
+  "model_calls_delta": "净减：首请求即完成保底（基线需 ~6 请求才到同状态）",
+  "verdict": "pass"
+}

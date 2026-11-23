@@ -1,0 +1,12 @@
+{
+ "direction": "template-reproducible-build + fast-lane-budget-guard",
+ "base_version": "v1.0.4",
+ "increment": "fast_lane：最小闭环保底管线，首个模型请求后即存在合法 partial（本版唯一机制改动）",
+ "fast_lane": {
+   "enabled": true,
+   "compile_timeout": 90,
+   "passes": 2,
+   "until_converge": false,
+   "min_reserve_requests": 6
+ }
+}
