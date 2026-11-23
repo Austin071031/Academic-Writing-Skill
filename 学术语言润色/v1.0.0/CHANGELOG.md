@@ -9,3 +9,5 @@
 - 异常处置：编码识别与乱码评分、LaTeX 保护、超长分块、重复运行稳定性、诚实降级。
 - 可复用资产：评分表（evaluation/scoring_sheet.md）、合成测试文本
   （evaluation/test_texts.md，含守恒陷阱用例 T4）。
+
+- 提交：playground attempt 89000（product-arena-02-7051d92d，写作02｜学术语言润色）
