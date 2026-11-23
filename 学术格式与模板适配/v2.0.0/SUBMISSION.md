@@ -2,12 +2,12 @@
 
 | 项目 | 内容 |
 |-|-|
-| **Playground Attempt ID** | **（待提交）** |
+| **Playground Attempt ID** | **101404** |
 | 挑战赛 | challenge-96263d10（学术格式与模板适配） |
-| 提交时间 | （待提交后回填） |
-| 状态 | 待提交 |
+| 提交时间 | 2026-11-23T13:3x:xxZ（CLI 返回时刻） |
+| 状态 | submitted（queued，待出分回填） |
 | 得分 | 待出分（出分后回填本行与根 README 索引表） |
-| 查询命令 | `playground status --attempt-id {ID}` |
+| 查询命令 | `playground status --attempt-id 101404` |
 
 ## 版本与提交的对应关系
 
