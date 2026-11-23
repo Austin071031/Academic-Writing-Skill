@@ -2,12 +2,12 @@
 
 | 项目 | 内容 |
 |-|-|
-| **Playground Attempt ID** | **（待提交）** |
+| **Playground Attempt ID** | **101409** |
 | 挑战赛 | product-arena-05-64faa4a2（写作09｜方法与实验章节写作） |
-| 提交时间 | （待提交） |
-| 状态 | （待提交） |
+| 提交时间 | 2026-11-23T13:4x UTC（以平台记录为准） |
+| 状态 | 已提交，待评测 |
 | 得分 | 待出分（出分后回填本行与根 README 索引表） |
-| 查询命令 | `playground status --attempt-id <ID>` |
+| 查询命令 | `playground status --attempt-id 101409` |
 
 ## 版本与提交的对应关系
 
