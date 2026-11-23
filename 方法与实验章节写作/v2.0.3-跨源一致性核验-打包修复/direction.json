@@ -1,0 +1,9 @@
+{
+  "name": "methods-cross-source-consistency",
+  "version": "v2.0.3",
+  "mechanism": "跨源一致性核验",
+  "engine_script": "cross_source_check.py",
+  "engine_report": "consistency_report.json",
+  "baseline": "v1.0.3-跨源一致性核验",
+  "change": "仅打包修复：文件数收敛至≤50（实测唯一文件16），内容与引擎不变"
+}
