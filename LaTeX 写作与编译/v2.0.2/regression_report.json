@@ -1,0 +1,35 @@
+{
+  "baseline": "v1.0.4",
+  "candidate": "v2.0.2",
+  "assets_missing": [],
+  "assets_check": "v1.0.4 全部 9 脚本与文档组保留且 SKILL.md 仍引用（diff 仅 +1 脚本 +1 direction.json +assemble REPORTS +2 行 +SKILL.md Phase 0.5 段）",
+  "rules": {
+    "baseline_scripts": 9,
+    "candidate_scripts": 10,
+    "removed": []
+  },
+  "contract_diff": {
+    "removed_keys": [],
+    "added_keys": []
+  },
+  "proxy_cases": {
+    "normal": {
+      "validate": "PASS",
+      "pdf_extract": "无 PDF 正确跳过，基线行为不变"
+    },
+    "degraded": {
+      "validate": "PASS",
+      "pdf_extract": "骨架生成（2节1文献），final 编译 success=True converged=True 0错误（基线此 case 编译链停摆）"
+    },
+    "overbudget": {
+      "validate": "PASS",
+      "pdf_extract": "无 PDF 正确跳过"
+    }
+  },
+  "fix_during_regression": "抽取文本未转义 LaTeX 特殊字符+TODO注释误入\\author{}→已修（tex_escape+占位文本外置）",
+  "seconds": {
+    "pdf_extract": "<1s（不含 pdftotext 本身）"
+  },
+  "model_calls_delta": "+1（读 pdf_report 与骨架）",
+  "verdict": "pass"
+}

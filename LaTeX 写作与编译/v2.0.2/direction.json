@@ -1,0 +1,12 @@
+{
+ "direction": "template-reproducible-build + pdf-material-pipeline",
+ "base_version": "v1.0.4",
+ "increment": "pdf_extract：PDF 材料直通（pdftotext 抽取 + 章节/参考文献骨架重建）（本版唯一机制改动）",
+ "pdf_extract": {
+   "max_pdf_mb": 60,
+   "min_heading_len": 3,
+   "engine_hint": "auto",
+   "class_zh": "ctexart",
+   "class_en": "article"
+ }
+}
