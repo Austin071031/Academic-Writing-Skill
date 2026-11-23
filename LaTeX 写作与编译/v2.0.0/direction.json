@@ -1,0 +1,18 @@
+{
+ "direction": "template-reproducible-build + instruction-compliance-audit",
+ "base_version": "v1.0.4",
+ "increment": "instruction_audit：题面指令原子化清单与产物落实审计（本版唯一机制改动）",
+ "instruction_audit": {
+   "engine_keys": ["pdflatex", "xelatex", "lualatex", "latexmk", "tectonic"],
+   "bibtool_keys": ["bibtex", "biber"],
+   "booktabs_keys": ["三线表", "booktabs"],
+   "eqnum_patterns": ["被引用公式.*编号", "所有公式.*编号", "公式.*编号", "编号.*公式"],
+   "template_keys": ["IEEEtran", "elsarticle", "acmart", "ctexart", "ctex", "revtex",
+                     "llncs", "ieeetran", "模板"],
+   "bibstyle_keys": ["GB/T 7714", "gbt7714", "plain", "unsrt", "IEEEtran",
+                     "apalike", "numeric", "author-year", "著者-出版年", "顺序编码"],
+   "required_patterns": ["须包含", "需包含", "必须包含", "应包含", "须涵盖", "保留",
+                         "不得删除", "不可删除"],
+   "changelog_keys": ["修改记录", "改动记录", "变更记录", "记录每处修改", "记录所有修改"]
+ }
+}

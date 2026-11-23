@@ -1,0 +1,34 @@
+{
+  "baseline": "v1.0.4",
+  "candidate": "v2.0.0",
+  "assets_missing": [],
+  "assets_check": "v1.0.4 全部 9 脚本与文档组在 v2.0.0 中存在且 SKILL.md 仍引用（diff 仅 +1 脚本 +1 direction.json +assemble REPORTS +2 行 +SKILL.md 2 段）",
+  "rules": {
+    "baseline_scripts": 9,
+    "candidate_scripts": 10,
+    "removed": []
+  },
+  "contract_diff": {
+    "removed_keys": [],
+    "added_keys": []
+  },
+  "proxy_cases": {
+    "normal": {
+      "validate": "PASS",
+      "instruction_audit": "检出题面 pdflatex vs 实际 xelatex 引擎错配（error/fail，预期命中）"
+    },
+    "degraded": {
+      "validate": "PASS",
+      "instruction_audit": "正确报编译 fail"
+    },
+    "overbudget": {
+      "validate": "PASS",
+      "instruction_audit": "收敛 pass"
+    }
+  },
+  "seconds": {
+    "instruction_audit": "<1s"
+  },
+  "model_calls_delta": "+1~2（两次 instruction_audit 运行与读报告）",
+  "verdict": "pass"
+}
