@@ -5,8 +5,8 @@
 | **Playground Attempt ID** | **89023** |
 | 挑战赛 | challenge-96263d10（学术格式与模板适配） |
 | 提交时间 | 2026-11-19T04:56:51+00:00 |
-| 状态 | 待人工评审 |
-| 得分 | 待出分（出分后回填本行与根 README 索引表） |
+| 状态 | evaluation_error（平台 worker 故障签名：harbor_errors=0，未耗配额；2026-11-23 平台实查） |
+| 得分 | 无（平台故障未出分；平台自动重跑未恢复，需重交） |
 | 查询命令 | `playground status --attempt-id 89023` |
 
 ## 版本与提交的对应关系

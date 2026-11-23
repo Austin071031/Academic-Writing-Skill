@@ -1,0 +1,13 @@
+{
+  "direction": "contract-hardening",
+  "baseline": "v1.0.1",
+  "repairs": [
+    "top-level crash guard: always write a legal result.json",
+    "early honest result.json stub before any stage",
+    "source/template fallback scan includes the case.json directory",
+    "single-call pdftotext with form-feed page split (budget guard)",
+    "dedicated LibreOffice user profile (read-only HOME safe)",
+    "direction.json read and recorded into uncertainty.notes"
+  ],
+  "contract_change": "none"
+}

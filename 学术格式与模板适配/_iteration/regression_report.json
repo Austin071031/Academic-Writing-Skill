@@ -1,0 +1,62 @@
+{
+  "baseline": "v1.0.1",
+  "candidate": "v2.0.0",
+  "assets_missing": [],
+  "assets_whitelist": [
+    "scripts/ooxml.py",
+    "scripts/inspect_case.py",
+    "scripts/measure_template.py",
+    "scripts/extract_spec.py",
+    "scripts/adapt_docx.py",
+    "scripts/fidelity_check.py",
+    "scripts/compliance_check.py",
+    "scripts/render_preview.py",
+    "scripts/build_result.py",
+    "scripts/run_pipeline.py",
+    "SKILL.md",
+    "references/usage.md",
+    "references/spec_schema.md",
+    "references/troubleshooting.md",
+    "examples/example.md"
+  ],
+  "rules": {
+    "baseline": 10,
+    "candidate": 10,
+    "removed": [],
+    "note": "R1-R10 守恒规则全部保留；新增为加固项（崩栈兜底/早写应急 result/扫描补全/预算守卫/LO profile/direction 读取），不替代原规则"
+  },
+  "contract_diff": {
+    "top_level_keys": "identical",
+    "uncertainty_subkeys": "identical",
+    "output_contract_fields": "identical (adapted_docx/compliance_report/fidelity_report)"
+  },
+  "seconds": {
+    "baseline_p1": 4.0,
+    "candidate_p1": 4.0,
+    "limit": 900
+  },
+  "model_calls": {
+    "baseline": 0,
+    "candidate": 0,
+    "note": "流水线无模型调用，预算不变"
+  },
+  "behavior_parity_p1": {
+    "stages": "identical (9/9 success)",
+    "compliance": "21 PASS/0 FAIL both",
+    "fidelity": "PASS both"
+  },
+  "repair_evidence": {
+    "p2_malformed_casejson": {
+      "baseline": "failed (材料未找到)",
+      "candidate": "success (C3 修复命中)"
+    },
+    "p4_missing_script": {
+      "candidate": "仍写出合法 result.json (C1 修复命中)"
+    },
+    "p3_empty_input": {
+      "baseline": "failed 诚实",
+      "candidate": "failed 诚实 (行为一致)"
+    }
+  },
+  "verdict": "pass"
+}
