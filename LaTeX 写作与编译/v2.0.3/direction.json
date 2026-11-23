@@ -1,0 +1,14 @@
+{
+ "direction": "template-reproducible-build + template-auto-remediation",
+ "base_version": "v1.0.4",
+ "increment": "template_fix：模板合规受限自动修复（必填项TODO骨架/hyperref顺序/过时宏包白名单）（本版唯一机制改动）",
+ "template_fix": {
+   "insert_metadata": true,
+   "fix_hyperref_order": true,
+   "replace_packages": {
+     "epsfig": "graphicx",
+     "subfigure": "subcaption",
+     "times": "newtxtext"
+   }
+ }
+}

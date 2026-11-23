@@ -1,0 +1,38 @@
+{
+  "baseline": "v1.0.4",
+  "candidate": "v2.0.3",
+  "assets_missing": [],
+  "assets_check": "v1.0.4 全部 9 脚本与文档组保留且 SKILL.md 仍引用（diff 仅 +1 脚本 +1 direction.json +assemble REPORTS +1 行 +SKILL.md Phase 2 段）",
+  "rules": {
+    "baseline_scripts": 9,
+    "candidate_scripts": 10,
+    "removed": []
+  },
+  "contract_diff": {
+    "removed_keys": [],
+    "added_keys": []
+  },
+  "proxy_cases": {
+    "normal": {
+      "validate": "PASS",
+      "template_fix": "article 要件齐全，0 处修复，行为守恒"
+    },
+    "degraded": {
+      "validate": "PASS",
+      "template_fix": "无主文件安全跳过"
+    },
+    "overbudget": {
+      "validate": "PASS",
+      "template_fix": "0 处修复，行为守恒"
+    },
+    "tfix(专项)": {
+      "template_fix": "5 处修复（P1×3/P3/P4），修复后 0 错误 converged=True；dry-run 与 apply 一致"
+    }
+  },
+  "fix_during_regression": "\\maketitle 曾误插导言区→改为 \\begin{document} 之后（已复测 0 错误收敛）",
+  "seconds": {
+    "template_fix": "<1s"
+  },
+  "model_calls_delta": "净减（必填项骨架不再手工插入）",
+  "verdict": "pass"
+}
