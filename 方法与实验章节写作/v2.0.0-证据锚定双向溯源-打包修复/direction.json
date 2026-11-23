@@ -1,0 +1,9 @@
+{
+  "name": "methods-evidence-anchoring",
+  "version": "v2.0.0",
+  "mechanism": "证据锚定双向溯源",
+  "engine_script": "audit_provenance.py",
+  "engine_report": "audit_report.json",
+  "baseline": "v1.0.0-证据锚定双向溯源",
+  "change": "仅打包修复：文件数收敛至≤50（实测唯一文件16），内容与引擎不变"
+}
