@@ -1,0 +1,9 @@
+{
+  "name": "methods-element-phase-matrix",
+  "version": "v2.0.1",
+  "mechanism": "六要素×train/val/test 阶段矩阵",
+  "engine_script": "element_matrix.py",
+  "engine_report": "matrix_report.json",
+  "baseline": "v1.0.1-六要素阶段矩阵",
+  "change": "仅打包修复：文件数收敛至≤50（实测唯一文件16），内容与引擎不变"
+}

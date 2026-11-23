@@ -1,0 +1,66 @@
+{
+  "baseline": "v1.0.1-六要素阶段矩阵",
+  "candidate": "v2.0.1-六要素阶段矩阵-打包修复",
+  "assets_missing": [],
+  "scripts_byte_identical_except": [
+    "build_deliverables.py"
+  ],
+  "rules": {
+    "baseline": 17,
+    "candidate": 17,
+    "removed": []
+  },
+  "contract_diff": [],
+  "behavior_conservation": [
+    {
+      "case": "normal",
+      "baseline_engine": {
+        "matrix": "pass"
+      },
+      "candidate_engine": {
+        "matrix": "pass"
+      },
+      "baseline_status": "success",
+      "candidate_status": "success",
+      "same": true
+    },
+    {
+      "case": "degraded",
+      "baseline_engine": {
+        "matrix": "pass"
+      },
+      "candidate_engine": {
+        "matrix": "pass"
+      },
+      "baseline_status": "success",
+      "candidate_status": "success",
+      "same": true
+    },
+    {
+      "case": "overload",
+      "baseline_engine": {
+        "matrix": "pass"
+      },
+      "candidate_engine": {
+        "matrix": "pass"
+      },
+      "baseline_status": "success",
+      "candidate_status": "success",
+      "same": true
+    }
+  ],
+  "seconds_worst": {
+    "baseline": 16.86,
+    "candidate": 16.59
+  },
+  "model_calls": {
+    "baseline": 0,
+    "candidate": 0
+  },
+  "bundle_text_files": {
+    "baseline": 81,
+    "candidate": 40,
+    "contract_limit": 50
+  },
+  "verdict": "pass"
+}
