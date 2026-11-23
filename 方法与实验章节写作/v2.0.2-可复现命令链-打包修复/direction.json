@@ -1,0 +1,9 @@
+{
+  "name": "methods-reproduction-gate",
+  "version": "v2.0.2",
+  "mechanism": "可复现命令链",
+  "engine_script": "repro_gate.py",
+  "engine_report": "repro_report.json",
+  "baseline": "v1.0.2-可复现命令链",
+  "change": "仅打包修复：文件数收敛至≤50（实测唯一文件16），内容与引擎不变"
+}
