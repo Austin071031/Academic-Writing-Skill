@@ -5,8 +5,8 @@
 | **Playground Attempt ID** | **103605** |
 | 挑战赛 | product-arena-07-865de7e4（写作13｜LaTeX 写作与编译） |
 | 提交时间 | 2026-11-24T07:01:44+00:00 |
-| 状态 | submitted（待评测） |
-| 得分 | 待评测 |
+| 状态 | evaluation_error（JudgeUnavailable，平台评测器不可用，非 Skill 缺陷，harbor_errors=0；2026-11-24 复核未出分） |
+| 得分 | 未出分（平台评测异常，pending_review） |
 | 查询命令 | `playground status --attempt-id 103605` |
 
 ## 版本与提交的对应关系
