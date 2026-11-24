@@ -1,16 +1,27 @@
-# 提交记录（playground submission）
+# SUBMISSION｜v1.0.1-相关工作分组比较
 
-| 项目 | 内容 |
-|-|-|
-| **Playground Attempt ID** | **89638** |
-| 挑战赛 | product-arena-04-4b82ad21（写作08｜引言与相关工作写作） |
-| 提交时间 | 2026-11-19T08:13:00+00:00 |
-| 状态 | 已出分 |
-| 得分 | 61 |
-| 查询命令 | `playground status --attempt-id 89638` |
+- **方向**：相关工作组织（分得清）
+- **Attempt ID**：89638
+- **得分**：**61.0** / 100（2026-11-24 查分，state=final）
+- **评分器评语**：Solid — refine for a more complete and rigorous solution
+- **核心机制**：grouping.json 声明式分组 + comparison_rows 五维矩阵 + 引用↔分组双向覆盖校验 + 逐篇罗列/时间序嫌疑检测
 
-## 版本与提交的对应关系
+## 提交信息
 
-本目录（v1.0.1-相关工作分组比较）的全部文件与 attempt 89638 打包上传的 skill 内容对应。
-每个版本一次 playground 提交，Attempt ID、得分在本文件回填，
-形成"版本—提交—得分"可追溯链。映射规则：同一挑战赛下按提交时间顺序对应版本号顺序。
+- 题目：写作08｜引言与相关工作写作（product-arena-04-4b82ad21）
+- 提交命令：`playground submit --challenge-id product-arena-04-4b82ad21 --outputs <本版本目录> --trace session_trace_intro08.jsonl --model SciMaster --harness SciMaster`
+- 评分器：harbor-lbg（按 Skill 在平台 3 个固定案例上真实运行的输出评分）
+- 同批 5 个方向提交：89635 / 89638 / 89639 / 89640 / 89641
+
+## 本地实测（合成案例：硫化物固态电解质，底稿 + bib×7 + 笔记×5）
+
+- 端到端管线 PASS：锚点 18/18 解析、论断-引用绑定 14/14 命中、四要素全 true、
+  validate_output PASS、preview.html 生成
+- 异常路径：空文献库/空空白/空稿件均能诚实降级 partial
+
+## 评后分析
+
+- 本版本得分低于目标 80（同期公开榜单顶部约 75）。
+- 共性瓶颈：SKILL.md 对执行 Agent 的结构化登记负担偏重，部分中间文件登记不全
+  时运行被判 incomplete；v1.1.x 迭代方向 = 精简登记字段、内联模板、
+  保证先成稿后补登记的保底顺序。
