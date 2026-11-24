@@ -1,0 +1,30 @@
+{
+ "version": "v2.0.4",
+ "parent": "v1.0.4 (attempt 90655, 55分)",
+ "date": "2026-11-24",
+ "verdict": "pass",
+ "checks": [
+  {
+   "name": "py_compile_all_scripts",
+   "result": "pass",
+   "detail": "10 个脚本全部通过语法检查"
+  },
+  {
+   "name": "instruction_audit_catches_engine_directive",
+   "result": "pass",
+   "detail": "代理 normal case：task.md 指定 pdflatex；auto 实选 xelatex 时 error 级 fail 且给出 build_report.engine=xelatex 证据；显式 --engine pdflatex 后该项 pass——基线 v1.0.4 的漏检场景被覆盖"
+  },
+  {
+   "name": "end_to_end_pipeline",
+   "result": "pass",
+   "detail": "init→inspect→instruction_audit→tex_build→instruction_audit→assemble→validate 全链路跑通，validate_output PASS，契约字段完整"
+  },
+  {
+   "name": "environmental_limitation",
+   "result": "noted",
+   "detail": "开发沙箱缺 pdflatex 中文字体(unisong75)，末轮 0 错误但无 PDF；审计如实报 fail 而非静默换引擎——符合设计意图（真实 harness 环境字体齐全与否均以 uncertainty 如实记录）"
+  }
+ ],
+ "contract_safety": "result.json 契约键名结构零改动；REPORTS 仅追加两个报告文件；SKILL.md 仅增量段落",
+ "equivalence_note": "机制内容与 v2.0.0 (attempt 101508) 等价；v2.0.0 因平台 JudgeUnavailable 未获评分，本版复投"
+}

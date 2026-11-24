@@ -25,3 +25,14 @@
 - 台账最高分 = 68（attempt 66367，内容不可得，不能做代码超集基线）；
   **代码基线 = v1.0.4（55，内容可得版本中的最高分）**。
 - 已出分版本得分来源全部为第 1 级（platform_verified），满足 §1.5 完成判据。
+
+## 2026-11-24 · v2.0.4 复投登记
+
+- **v2.0.4 = attempt 103605**（2026-11-24T07:01:44+00:00 submitted）。
+- 决策依据：全部 9 次历史提交复核——仅 90654=38.33、90655=55 出分；101508/101509/101511/101513
+  execLog 明示 `Standalone evaluation failed: JudgeUnavailable`（harbor_errors=0，平台侧，非 Skill 缺陷）；
+  外部 4 次（56–68）均 outcome=partial → partial 非区分因素，内容质量才是。
+- 父版 = v1.0.4（55，内容可得最高分）；唯一机制改动 = instruction_audit（与未获评分
+  的 v2.0.0 等价，命中有实跑证据的题面指令漏检短板，归属实际效果 40 分维度）。
+- 回归 verdict=pass（语法/引擎指令捕获正误双向/全链路 validate PASS；沙箱缺 pdflatex
+  中文字体为环境限制，审计如实报 fail，符合设计）。
