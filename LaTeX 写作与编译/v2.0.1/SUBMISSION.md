@@ -5,8 +5,8 @@
 | **Playground Attempt ID** | **101509** |
 | 挑战赛 | product-arena-07-865de7e4（写作13｜LaTeX 写作与编译） |
 | 提交时间 | 2026-11-23（UTC） |
-| 状态 | 已提交（submitted，待评测） |
-| 得分 | 待出分 |
+| 状态 | evaluation_error（平台评测异常，pending_review，2026-11-24 复核未出分） |
+| 得分 | 待出分（平台评测异常 evaluation_error，待重跑/人工复核；2026-11-24 复核） |
 | 查询命令 | `playground status --attempt-id 101509` |
 
 ## 版本与提交的对应关系

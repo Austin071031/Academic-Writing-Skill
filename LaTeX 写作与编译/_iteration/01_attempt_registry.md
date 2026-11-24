@@ -1,6 +1,6 @@
 # 表 1 · 提交台账（写作13｜LaTeX 写作与编译，product-arena-07-865de7e4）
 
-采集时间：2026-11-23 UTC。平台复核命令：`playground status --attempt-id <ID>` 与
+采集时间：2026-11-23 UTC（2026-11-24 复核：90654=38.33、90655=55 维持 scored；90648/90650/90653/101508/101509/101511/101513 仍 evaluation_error/pending_review）。平台复核命令：`playground status --attempt-id <ID>` 与
 `playground attempt list --challenge-id product-arena-07-865de7e4 --limit 50`（platform_verified）。
 
 | 版本 | 目录 | 方向 | attempt | 提交时间 | 状态 | 得分 | 置信度 |
