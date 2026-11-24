@@ -1,16 +1,31 @@
-# 提交记录（playground submission）
+# SUBMISSION｜v1.0.1-编号连锁更新（编号更新与交叉引用（编得顺））
+
+## 提交信息
 
 | 项目 | 内容 |
 |-|-|
-| **Playground Attempt ID** | **89250** |
-| 挑战赛 | product-arena-03-429cc14d（写作04｜参考文献与引用管理） |
-| 提交时间 | 2026-11-19T06:48:51+00:00 |
-| 状态 | 已出分 |
-| 得分 | 63 |
-| 查询命令 | `playground status --attempt-id 89250` |
+| 赛题 | 玻尔产品周赛第四期·写作04「参考文献与引用管理」（challenge product-arena-03-429cc14d） |
+| Skill 名称 | `citation-renumber-chain` |
+| Attempt ID | **89250** |
+| 提交时间 | 2026-11-19（UTC） |
+| 提交方式 | `playground submit --challenge-id product-arena-03-429cc14d --outputs <本版本目录> --trace session_trace_w04.jsonl --model SciMaster --harness SciMaster` |
+| 平台入口 | https://play.bohrium.com/#challenge/product-arena-03-429cc14d |
 
-## 版本与提交的对应关系
+## 评分结果
 
-本目录（v1.0.1-编号连锁更新）的全部文件与 attempt 89250 打包上传的 skill 内容对应。
-每个版本一次 playground 提交，Attempt ID、得分在本文件回填，
-形成"版本—提交—得分"可追溯链。映射规则：同一挑战赛下按提交时间顺序对应版本号顺序。
+| 项目 | 值 |
+|-|-|
+| **总分** | **63.0 / 100** |
+| 评定方式 | harbor 回放自动评定（`harbor_replay_executed: 1`，`trace_factor: 1.0`） |
+| 评定状态 | final（`scoreIsFinal: true`，无人工 override） |
+| 评审摘要 | "Solid — refine for a more complete and rigorous solution." |
+
+> 详细评分日志（scoring-log）平台未开放读取权限；分项得分不可得。
+
+## 复盘与迭代方向
+
+- 摘要指向回放运行产物**完整性不足**（"push your agent for a more complete solution"）。
+  推断原因：SKILL.md 阶段流程偏长，在 64 请求 / 900 秒预算内 DeepSeek Harness 未走完全部 Phase，
+  主产物以 partial 收尾或缺项。
+- 下一版本计划：压缩为「一条主命令全流水线」（脚本一步串联 预检→引擎→组装→终检），
+  SKILL.md 只保留极短触发说明，确保任意案例在极少请求内必然产出完整 result.json 与可编辑交付物。
