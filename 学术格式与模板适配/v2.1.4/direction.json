@@ -1,0 +1,9 @@
+{
+  "direction": "title-block-protection",
+  "baseline": "v2.0.0",
+  "baseline_attempt": 101404,
+  "baseline_score": 58.6667,
+  "change": "paragraphs before the first structural block (paper title/authors/affiliation) are exempt from body run normalization; protected count logged",
+  "rubric_target": "实际效果(40): 结果正确性/结果完整性",
+  "contract_change": "none"
+}

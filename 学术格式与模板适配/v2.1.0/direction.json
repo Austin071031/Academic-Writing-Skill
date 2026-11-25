@@ -1,0 +1,9 @@
+{
+  "direction": "measured-spec-wiring",
+  "baseline": "v2.0.0",
+  "baseline_attempt": 101404,
+  "baseline_score": 58.6667,
+  "change": "project measured template styles (body/heading/caption/reference roles) into the normalized spec groups the adapter consumes; scope the body run spot-check to body paragraphs",
+  "rubric_target": "实际效果(40): 任务完成度/结果正确性",
+  "contract_change": "none"
+}

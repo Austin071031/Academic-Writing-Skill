@@ -1,0 +1,9 @@
+{
+  "direction": "paragraph-spacing-override-clearing",
+  "baseline": "v2.0.0",
+  "baseline_attempt": 101404,
+  "baseline_score": 58.6667,
+  "change": "clear direct w:line/w:lineRule overrides on body paragraphs so the style-bound line spacing actually renders; structural paragraphs guarded, every edit logged",
+  "rubric_target": "实际效果(40): 结果正确性",
+  "contract_change": "none"
+}

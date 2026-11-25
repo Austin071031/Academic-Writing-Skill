@@ -1,0 +1,9 @@
+{
+  "direction": "caption-xref-consistency-check",
+  "baseline": "v2.0.0",
+  "baseline_attempt": 101404,
+  "baseline_score": 58.6667,
+  "change": "compliance gains caption numbering sequence checks (duplicate FAIL, gap WARN) and in-text cross-reference closure checks (orphan/unreferenced WARN), detection-only",
+  "rubric_target": "创新增益(15): 新增能力/创新证据; 实际效果(40): 结果可核验性",
+  "contract_change": "none"
+}

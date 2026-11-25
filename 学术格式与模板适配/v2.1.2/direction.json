@@ -1,0 +1,9 @@
+{
+  "direction": "font-embedding-evidence-fix",
+  "baseline": "v2.0.0",
+  "baseline_attempt": 101404,
+  "baseline_score": 58.6667,
+  "change": "parse pdffonts emb/sub flags from the right end of each row (multi-word type/encoding columns no longer misread as not-embedded)",
+  "rubric_target": "实际效果(40): 导出核验证据正确性; 可靠体验",
+  "contract_change": "none"
+}
