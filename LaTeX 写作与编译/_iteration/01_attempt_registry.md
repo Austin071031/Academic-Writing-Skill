@@ -49,3 +49,15 @@
 
 - 10 次提交状态与 11-24 完全一致：仅 90654=38.33、90655=55 出分；其余 8 次仍 evaluation_error。
 - 本题评测器自 11-23 起持续 JudgeUnavailable 已达第三天，维持"暂停提交、定期查分"判定。
+
+## 2026-11-25 · 五方向批次 v2.1.0-v2.1.4 提交登记
+
+- 父版 = v1.0.4（90655，55 分，唯一内容可得最高分）；每版相对父版仅一处机制增量，
+  五方向按 EV 排序：①instruction_audit ②fast_lane ③template_fix ④pdf_extract ⑤math_audit。
+- v2.0.0-v2.0.4 机制从未获评分（JudgeUnavailable），v2.1.0 为 instruction_audit 复投，
+  v2.1.1-v2.1.3 复用已回归的同机制资产，v2.1.4 为全新方向（math_audit，M1-M8）。
+- 提交（2026-11-25T02:49Z 顺序）：v2.1.0=106397、v2.1.1=106401、v2.1.2=106403、
+  v2.1.3=106410、v2.1.4=106411，均 submitted。
+- 回归 verdict=pass（各自代理 case 实测：引擎指令捕获/最小闭环 validate PASS/
+  epsfig→graphicx 修复后 0 错收敛/PDF-only 骨架生成/M 类 findings 7 项带定位）。
+- 说明：attempt↔版本映射按提交时间顺序（attempt list 新→旧）对应版本 ④③②①。

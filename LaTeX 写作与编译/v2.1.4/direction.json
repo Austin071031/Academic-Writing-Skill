@@ -1,0 +1,7 @@
+{
+ "version": "v2.1.4",
+ "base_version": "v1.0.4 (attempt 90655, 55分)",
+ "direction": "template-reproducible-build + math-consistency-audit",
+ "increment": "math_audit：M1-M8 公式专项机检（只诊断不擅改），命中题面『改得对·公式符号与编号』考察点；本版唯一机制改动",
+ "notes": "五方向批次 v2.1.0-v2.1.4 之第五方向；父版为已出分最高版本 v1.0.4"
+}

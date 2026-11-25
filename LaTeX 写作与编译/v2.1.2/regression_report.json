@@ -1,0 +1,20 @@
+{
+ "version": "v2.1.2",
+ "parent": "v1.0.4 (attempt 90655, 55分)",
+ "date": "2026-11-25",
+ "verdict": "pass",
+ "mechanism": "template_fix",
+ "checks": [
+  {
+   "name": "py_compile_all_scripts",
+   "result": "pass"
+  },
+  {
+   "name": "template_fix_proxy_case",
+   "result": "pass",
+   "detail": "tfix 代理 case：epsfig→graphicx 白名单替换执行、IEEEtran 必填项 TODO 骨架登记 2 项人工确认、复编 0 错误收敛"
+  }
+ ],
+ "contract_safety": "result.json 契约键名结构零改动；相对父版仅一处机制增量",
+ "batch": "五方向批次 v2.1.0-v2.1.4（父版=已出分最高 v1.0.4；每版单一机制改动）"
+}

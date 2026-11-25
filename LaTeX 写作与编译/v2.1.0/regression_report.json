@@ -1,0 +1,20 @@
+{
+ "version": "v2.1.0",
+ "parent": "v1.0.4 (attempt 90655, 55分)",
+ "date": "2026-11-25",
+ "verdict": "pass",
+ "mechanism": "instruction_audit",
+ "checks": [
+  {
+   "name": "py_compile_all_scripts",
+   "result": "pass"
+  },
+  {
+   "name": "instruction_audit_proxy_case",
+   "result": "pass",
+   "detail": "题面指定 pdflatex 而 auto 实选 xelatex → error 级 fail 并给出 build_report.engine 证据；机制命中基线实跑漏检短板（实际效果 40 分维度）"
+  }
+ ],
+ "contract_safety": "result.json 契约键名结构零改动；相对父版仅一处机制增量",
+ "batch": "五方向批次 v2.1.0-v2.1.4（父版=已出分最高 v1.0.4；每版单一机制改动）"
+}

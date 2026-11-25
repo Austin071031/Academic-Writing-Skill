@@ -1,0 +1,20 @@
+{
+ "version": "v2.1.4",
+ "parent": "v1.0.4 (attempt 90655, 55分)",
+ "date": "2026-11-25",
+ "verdict": "pass",
+ "mechanism": "math_audit",
+ "checks": [
+  {
+   "name": "py_compile_all_scripts",
+   "result": "pass"
+  },
+  {
+   "name": "math_audit_proxy_case",
+   "result": "pass",
+   "detail": "math 代理 case：7 项 findings 全部带 file:line（M1×2/M2/M3a/M4/M5/M6），只诊断不擅改，幂等可复扫"
+  }
+ ],
+ "contract_safety": "result.json 契约键名结构零改动；相对父版仅一处机制增量",
+ "batch": "五方向批次 v2.1.0-v2.1.4（父版=已出分最高 v1.0.4；每版单一机制改动）"
+}

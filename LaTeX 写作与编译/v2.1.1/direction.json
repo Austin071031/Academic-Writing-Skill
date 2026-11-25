@@ -1,0 +1,13 @@
+{
+ "direction": "template-reproducible-build + fast-lane-budget-guard",
+ "base_version": "v1.0.4 (attempt 90655, 55分)",
+ "increment": "fast_lane：一命令最小闭环保底管线（预算守门）；本版唯一机制改动（五方向批次 v2.1.0-v2.1.4，父版=已出分最高 v1.0.4）",
+ "fast_lane": {
+  "enabled": true,
+  "compile_timeout": 90,
+  "passes": 2,
+  "until_converge": false,
+  "min_reserve_requests": 6
+ },
+ "version": "v2.1.1"
+}
