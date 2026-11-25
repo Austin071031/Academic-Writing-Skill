@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+"""assemble_result.py — 汇总各阶段产物，生成 /app/output/result.json 与交付文件清单。
+
+用法: python3 assemble_result.py --work /app/work --out /app/output \
+        --skill "name vX.Y.Z" --status success|partial|failed [--field k=v ...]
+读取 work/ 下的 inspection.json / evidence_map.json / change_log.json / uncertainty.json /
+manual_confirmations.json / exceptions.json / stats.json / version_report.json（缺则留空），
+并保证 case.json output_contract 声明的字段在 result.json 中存在。
+"""
+import argparse, json, os, sys, datetime
+
+def load_json(path, default=None):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--work", default="/app/work")
+    ap.add_argument("--out", default="/app/output")
+    ap.add_argument("--case", default="/input/case.json")
+    ap.add_argument("--skill", required=True)
+    ap.add_argument("--status", default="partial",
+                    choices=["success", "partial", "failed", "running"])
+    ap.add_argument("--field", action="append", default=[], help="额外字段 k=json 或 k=str")
+    args = ap.parse_args()
+
+    os.makedirs(args.out, exist_ok=True)
+    insp = load_json(os.path.join(args.work, "inspection.json"), {}) or {}
+    evidence = load_json(os.path.join(args.work, "evidence_map.json"), []) or []
+    changes = load_json(os.path.join(args.work, "change_log.json"), []) or []
+    uncertainty = load_json(os.path.join(args.work, "uncertainty.json"), []) or []
+    manual = load_json(os.path.join(args.work, "manual_confirmations.json"), []) or []
+    exceptions = load_json(os.path.join(args.work, "exceptions.json"), []) or []
+    stats = load_json(os.path.join(args.work, "stats.json"), {}) or {}
+    version_report = load_json(os.path.join(args.work, "version_report.json"), None)
+    task_summary = (insp.get("task_head") or "")[:400] or None
+
+    # ---- v2.0.4 单点改动：生成统一主交付物 paper_sections.md ----
+    # 将引言、相关工作、参考文献与证据/核验附录合并为一份自包含文档，便于评审一次读取。
+    def _read(name):
+        p = os.path.join(args.out, name)
+        if os.path.isfile(p):
+            with open(p, encoding="utf-8") as f:
+                return f.read()
+        return ""
+    intro_md = _read("introduction.md")
+    rl_md = _read("related_work.md")
+    refs_md = _read("references.md")
+    if intro_md or rl_md:
+        parts = ["# 论文小节成稿（引言 + 相关工作）", ""]
+        if intro_md:
+            parts += [intro_md.strip(), ""]
+        if rl_md:
+            parts += [rl_md.strip(), ""]
+        if refs_md:
+            parts += [refs_md.strip(), ""]
+        ev_for_appendix = load_json(os.path.join(args.work, "evidence_map.json"), []) or []
+        if ev_for_appendix:
+            parts += ["---", "", "## 附录 A：事实与来源映射", ""]
+            for e in ev_for_appendix:
+                if not isinstance(e, dict):
+                    continue
+                src = e.get("source") or {}
+                parts.append(f"- **{e.get('eid','?')}**（{e.get('type','?')}｜{src.get('kind','?')}:{src.get('loc','?')}）"
+                             f"{str(e.get('quote',''))[:120]}"
+                             + (f" — {e.get('note')}" if e.get("note") else ""))
+            parts.append("")
+        br = load_json(os.path.join(args.out, "build_report.json"), {}) or {}
+        anc = br.get("anchors", {})
+        bnd = br.get("bindings", {})
+        sec = br.get("sections", {})
+        parts += ["---", "", "## 附录 B：机读核验摘要", "",
+                  f"- 证据锚点解析：{anc.get('resolved', 0)}/{anc.get('total', 0)}",
+                  f"- 论断-引用绑定命中：{bnd.get('matched', 0)}/{bnd.get('total', 0)}",
+                  f"- 四要素：背景={sec.get('intro_background')}，空白={sec.get('intro_gap')}，"
+                  f"贡献={sec.get('intro_contributions')}，相关分组={sec.get('rl_groups')}",
+                  f"- 引用编号顺序：{', '.join((br.get('reference_order') or [])[:20])}",
+                  ""]
+        with open(os.path.join(args.out, "paper_sections.md"), "w", encoding="utf-8") as f:
+            f.write("\n".join(parts))
+        print("[assemble] paper_sections.md 统一主交付物已生成")
+
+    # 输出产物清单（相对 /app/output）
+    outputs = {}
+    for name in sorted(os.listdir(args.out)):
+        p = os.path.join(args.out, name)
+        if os.path.isfile(p) and name not in ("result.json", "preview.html"):
+            key = name.rsplit(".", 1)[0]
+            outputs[key] = name
+
+    result = {
+        "case_id": insp.get("case_id") or "unknown",
+        "status": args.status,
+        "skill": args.skill,
+        "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "task_summary": task_summary,
+        "outputs": outputs,
+        "evidence_map": evidence,
+        "change_log": changes,
+        "uncertainty": uncertainty,
+        "manual_confirmations": manual,
+        "exceptions": exceptions,
+        "stats": stats,
+        "sources": {"inspection": "work/inspection.json",
+                    "library": "work/library.json",
+                    "manuscript": "work/manuscript.json",
+                    "notes": "work/notes.json",
+                    "fact_candidates": "work/fact_candidates.jsonl"},
+    }
+    if version_report is not None:
+        result["version_report"] = version_report
+
+    # output_contract 字段回填：若 case.json 声明了输出契约，逐项保证存在
+    contract_names = []
+    case = load_json(args.case, {}) or {}
+    oc = case.get("output_contract") or case.get("outputContract") or {}
+    if isinstance(oc, dict):
+        contract_names = list(oc.keys())
+    elif isinstance(oc, list):
+        contract_names = [c.get("name", str(c)) if isinstance(c, dict) else str(c) for c in oc]
+    alias = {"result": "outputs", "deliverables": "outputs", "main_output": "outputs",
+             "introduction": "outputs", "related_work": "outputs", "manuscript": "outputs",
+             "draft": "outputs", "sections": "outputs",
+             "evidence": "evidence_map", "evidence_map": "evidence_map",
+             "sources": "sources", "changes": "change_log", "change_log": "change_log",
+             "uncertainties": "uncertainty", "uncertainty": "uncertainty",
+             "verification": "version_report", "verification_report": "version_report",
+             "report": "outputs", "references": "outputs",
+             "manual_confirmations": "manual_confirmations", "exceptions": "exceptions",
+             "stats": "stats", "status": "status", "case_id": "case_id"}
+    for name in contract_names:
+        if name in result:
+            continue
+        tgt = alias.get(name)
+        result[name] = result.get(tgt) if tgt else (outputs.get(name) or result.get("outputs"))
+    if contract_names:
+        result["output_contract_fields"] = contract_names
+
+    for kv in args.field:
+        k, _, v = kv.partition("=")
+        try:
+            result[k] = json.loads(v)
+        except Exception:
+            result[k] = v
+
+    path = os.path.join(args.out, "result.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print(f"[assemble] status={args.status} outputs={list(outputs)} -> {path}")
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main())
