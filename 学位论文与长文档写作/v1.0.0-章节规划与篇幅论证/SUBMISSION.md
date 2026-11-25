@@ -1,16 +1,28 @@
-# 提交记录（playground submission）
+# 提交与评分记录（SUBMISSION）
 
-| 项目 | 内容 |
+- 题目：学位论文与长文档写作（challenge-32c0210d）
+- 本版本：v1.0.0-章节规划与篇幅论证（longdoc-chapter-planning，方向：立得住·章节规划）
+- 提交方式：playground CLI 0.1.57（`playground submit --challenge-id challenge-32c0210d --outputs <本目录> --skill <本目录>`）
+- 提交时间：2026-11-19 14:22 UTC
+
+## 评分结果
+
+| 项 | 值 |
 |-|-|
-| **Playground Attempt ID** | **90745** |
-| 挑战赛 | challenge-32c0210d（学位论文与长文档写作） |
-| 提交时间 | 2026-11-19T14:22:25+00:00 |
-| 状态 | 已提交（排队中） |
-| 得分 | 待出分（出分后回填本行与根 README 索引表） |
-| 查询命令 | `playground status --attempt-id 90745` |
+| Attempt ID | 90745 |
+| 状态 | scored（final，2026-11-22 出分） |
+| Harbor 得分 | **50.0 / 100** |
+| GitHub 附加分 | 0（原因：not_found，见下） |
+| 最终得分 | **50.0** |
+| Outcome | partial（Harbor 评语：genuinely-derived solution 完成度不足，部分给分） |
 
-## 版本与提交的对应关系
+## 备注
 
-本目录（v1.0.0-章节规划与篇幅论证）的全部文件与 attempt 90745 打包上传的 skill 内容对应。
-每个版本一次 playground 提交，Attempt ID、得分在本文件回填，
-形成"版本—提交—得分"可追溯链。映射规则：同一挑战赛下按提交时间顺序对应版本号顺序。
+- GitHub 附加分未计入：评分侧返回 `github_reason = not_found`。本目录 `GITHUB_URL.txt` 存在且链接匿名可访问（HTTP 200 已验证）；下一轮迭代将排查评分侧对 `GITHUB_URL.txt` 位置/格式的预期（候选：要求仓库根链接、首行裸 URL 或提交目录根路径语义）。
+- 提分方向（依据 outcome=partial）：提高对 3 个固定案例的任务完成度——确保生成/修改的主产物（章节稿/修订稿）真正落在 /app/output，而非仅交付检查报告；对 organizer-edit-workorder.json 的实际编辑目标逐条落实。
+
+## 出分回填（2026-11-25 查询）
+
+- Harbor 得分 **50.0 / 100**，GitHub 附加分 0（评分侧返回 `github_reason = not_found`；本目录 GITHUB_URL.txt 存在且链接匿名 HTTP 200 可访问，附加分链路待排查）。
+- Harbor 评语：genuinely-derived solution 完成度不足，部分给分（outcome=partial）。
+- 迭代方向：主产物完整落 /app/output、对 organizer-edit-workorder.json 编辑目标逐条落实、修复附加分链路。
