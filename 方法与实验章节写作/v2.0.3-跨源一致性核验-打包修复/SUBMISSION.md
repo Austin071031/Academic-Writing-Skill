@@ -5,8 +5,8 @@
 | **Playground Attempt ID** | **101412** |
 | 挑战赛 | product-arena-05-64faa4a2（写作09｜方法与实验章节写作） |
 | 提交时间 | 2026-11-23T13:35:13+00:00 |
-| 状态 | 已提交（submitted），排队等待评测 |
-| 得分 | 待出分（出分后回填本文件与根 README 索引表） |
+| 状态 | 已出分（scored，最终分，trace_factor=1.0） |
+| 得分 | **62.0** |
 | 查询命令 | `playground status --attempt-id 101412` |
 
 ## 版本与提交的对应关系
