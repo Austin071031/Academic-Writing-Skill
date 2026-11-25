@@ -1,0 +1,56 @@
+{
+  "parent": "v2.0.2-可复现命令链-打包修复（attempt 101411，62.6667，最高分父辈）",
+  "candidate": "v3.0.4-复审修订循环",
+  "single_change": "复审修订循环：新增 style_check.py（套话/压句/数值无锚机检）与 Phase 4.5 必做修订循环",
+  "assets_missing": [],
+  "scripts_added": [
+    "style_check.py"
+  ],
+  "scripts_changed": [],
+  "contract_keys_lost": [],
+  "contract_keys_note": "无键变更",
+  "behavior": [
+    {
+      "case": "normal",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail",
+        "style": "pass"
+      },
+      "coverage": 6,
+      "anchors_missing": 0,
+      "keys_gained": []
+    },
+    {
+      "case": "degraded",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail",
+        "style": "pass"
+      },
+      "coverage": 4,
+      "anchors_missing": 0,
+      "keys_gained": []
+    },
+    {
+      "case": "overload",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail",
+        "style": "pass"
+      },
+      "coverage": 4,
+      "anchors_missing": 0,
+      "keys_gained": []
+    }
+  ],
+  "seconds_worst": {
+    "parent": 19.93,
+    "candidate": 20.35
+  },
+  "unique_files": 16,
+  "verdict": "pass"
+}

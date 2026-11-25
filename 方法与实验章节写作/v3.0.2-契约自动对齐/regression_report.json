@@ -1,0 +1,61 @@
+{
+  "parent": "v2.0.2-可复现命令链-打包修复（attempt 101411，62.6667，最高分父辈）",
+  "candidate": "v3.0.2-契约自动对齐",
+  "single_change": "契约自动对齐：init_result 自动推导 contract_extra 草稿；新增 contract_audit.py（task.md 原子指令拆解+装配后契约/指令覆盖校验）",
+  "assets_missing": [],
+  "scripts_added": [
+    "contract_audit.py"
+  ],
+  "scripts_changed": [
+    "build_deliverables.py",
+    "init_result.py"
+  ],
+  "contract_keys_lost": [],
+  "contract_keys_note": "v3.0.2 新增键为 output_contract 要求字段的自动补齐（additive，非结构变更）",
+  "behavior": [
+    {
+      "case": "normal",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail",
+        "contract": "fail"
+      },
+      "coverage": 6,
+      "anchors_missing": 0,
+      "keys_gained": [
+        "verification"
+      ]
+    },
+    {
+      "case": "degraded",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail",
+        "contract": "fail"
+      },
+      "coverage": 4,
+      "anchors_missing": 0,
+      "keys_gained": []
+    },
+    {
+      "case": "overload",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail",
+        "contract": "fail"
+      },
+      "coverage": 4,
+      "anchors_missing": 0,
+      "keys_gained": []
+    }
+  ],
+  "seconds_worst": {
+    "parent": 19.93,
+    "candidate": 20.43
+  },
+  "unique_files": 17,
+  "verdict": "pass"
+}

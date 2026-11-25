@@ -1,0 +1,53 @@
+{
+  "parent": "v2.0.2-可复现命令链-打包修复（attempt 101411，62.6667，最高分父辈）",
+  "candidate": "v3.0.3-正文表格化信息密度",
+  "single_change": "正文信息密度：引擎把环境规格卡、参数表、复现命令块注入正文对应小节（原仅附录）",
+  "assets_missing": [],
+  "scripts_added": [],
+  "scripts_changed": [
+    "build_deliverables.py"
+  ],
+  "contract_keys_lost": [],
+  "contract_keys_note": "无键变更",
+  "behavior": [
+    {
+      "case": "normal",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail"
+      },
+      "coverage": 6,
+      "anchors_missing": 0,
+      "keys_gained": []
+    },
+    {
+      "case": "degraded",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail"
+      },
+      "coverage": 5,
+      "anchors_missing": 0,
+      "keys_gained": []
+    },
+    {
+      "case": "overload",
+      "parent_status": "success",
+      "candidate_status": "success",
+      "candidate_engine": {
+        "repro": "fail"
+      },
+      "coverage": 5,
+      "anchors_missing": 0,
+      "keys_gained": []
+    }
+  ],
+  "seconds_worst": {
+    "parent": 19.93,
+    "candidate": 20.26
+  },
+  "unique_files": 16,
+  "verdict": "pass"
+}

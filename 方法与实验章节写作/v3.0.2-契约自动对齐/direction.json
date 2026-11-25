@@ -1,0 +1,9 @@
+{
+  "name": "methods-reproduction-gate",
+  "version": "v3.0.2",
+  "mechanism": "可复现命令链",
+  "engine_script": "repro_gate.py",
+  "engine_report": "repro_report.json",
+  "baseline": "v2.0.2-可复现命令链-打包修复（attempt 101411，62.6667，最高分父辈）",
+  "change": "契约自动对齐：init_result 自动推导 contract_extra 草稿；新增 contract_audit.py（task.md 原子指令拆解+装配后契约/指令覆盖校验）"
+}

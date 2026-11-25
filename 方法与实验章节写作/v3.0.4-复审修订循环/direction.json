@@ -1,0 +1,9 @@
+{
+  "name": "methods-reproduction-gate",
+  "version": "v3.0.4",
+  "mechanism": "可复现命令链",
+  "engine_script": "repro_gate.py",
+  "engine_report": "repro_report.json",
+  "baseline": "v2.0.2-可复现命令链-打包修复（attempt 101411，62.6667，最高分父辈）",
+  "change": "复审修订循环：新增 style_check.py（套话/压句/数值无锚机检）与 Phase 4.5 必做修订循环"
+}

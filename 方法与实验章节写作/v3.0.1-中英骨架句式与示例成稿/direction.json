@@ -1,0 +1,9 @@
+{
+  "name": "methods-reproduction-gate",
+  "version": "v3.0.1",
+  "mechanism": "可复现命令链",
+  "engine_script": "repro_gate.py",
+  "engine_report": "repro_report.json",
+  "baseline": "v2.0.2-可复现命令链-打包修复（attempt 101411，62.6667，最高分父辈）",
+  "change": "新增中英对照章节骨架句式库（chapter_skeleton.md）与完整示例成稿（example_chapter.md），行文逐句套用"
+}
