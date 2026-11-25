@@ -5,8 +5,8 @@
 | **Playground Attempt ID** | **99596** |
 | 挑战赛 | product-arena-02-7051d92d（写作02｜学术语言润色） |
 | 提交时间 | 2026-11-23T02:45:36+00:00 |
-| 状态 | 已提交（submitted，等待平台评测） |
-| 得分 | 待出分（出分后回填本文件与根 README 索引表） |
+| 状态 | 已出分（scored，execStatus=completed） |
+| 得分 | **63**（harbor_score，2026-11-25 查询回填） |
 | 查询命令 | `playground status --attempt-id 99596` |
 
 ## 版本与提交的对应关系
