@@ -4,9 +4,9 @@
 |-|-|
 | **Playground Attempt ID** | **101404** |
 | 挑战赛 | challenge-96263d10（学术格式与模板适配） |
-| 提交时间 | 2026-11-23T13:3x:xxZ（CLI 返回时刻） |
-| 状态 | submitted（queued，待出分回填） |
-| 得分 | 待出分（出分后回填本行与根 README 索引表） |
+| 提交时间 | 2026-11-23T13:32:31+00:00 |
+| 状态 | scored（exec completed，2026-11-25 平台实查） |
+| 得分 | **58.6667**（harbor scored，本题首个有效出分基线） |
 | 查询命令 | `playground status --attempt-id 101404` |
 
 ## 版本与提交的对应关系
