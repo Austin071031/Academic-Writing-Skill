@@ -1,0 +1,38 @@
+{
+  "version": "v2.0.3-厚度信息密度",
+  "parent": "v1.0.3-创新点差异定位 (attempt 90810, 66.67/100)",
+  "generated": "2026-11-25",
+  "testbed": "/tmp/v203test (synth-case/input 副本；synth-case/v1.0.x/shared-grant 未修改)",
+  "assets": {
+    "scripts_same_except_elements_check": true,
+    "scripts_same_count": "12/13",
+    "elements_check_changed": true,
+    "engine_same": true
+  },
+  "behavior": {
+    "pipeline_exit0": true,
+    "validate": "PASS",
+    "validate_detail": "ALL PASS (8/8)",
+    "elements_check_synth": "7 要素全部 thin（synth 短稿正确命中），研究内容/技术路线 density_status=low（FID<3），suggestion 非空且候选 FID 全部存在于台账",
+    "positive_case": "副本 work 上扩写技术路线至 493 字 + 4 个真实 FID → status=ok, density_status=ok, 无 finding",
+    "edge_case": "draft.json 缺失时写空 element_map/findings 并 exit 0（接口兼容）",
+    "element_map_original_keys_preserved": true
+  },
+  "contract": {
+    "result_json_keys_same": true,
+    "result_json_keys": [
+      "case_id",
+      "change_log",
+      "evidence_map",
+      "exceptions",
+      "manual_confirmations",
+      "output_contract",
+      "outputs",
+      "skill",
+      "stats",
+      "status",
+      "uncertainty"
+    ]
+  },
+  "single_change": "elements_check.py 厚度阈值上提+证据密度机检+可执行扩展指令（含 element_mapping.md 证据密度列），SKILL.md 第 12 步扩展环改强制；其余 12 脚本与父辈 md5 一致"
+}

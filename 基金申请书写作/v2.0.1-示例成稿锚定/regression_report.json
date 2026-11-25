@@ -1,0 +1,98 @@
+{
+  "version": "v2.0.1-示例成稿锚定",
+  "parent": {
+    "version": "v1.0.3-创新点差异定位",
+    "attempt": 90810,
+    "score": 66.67
+  },
+  "generated_by": "machine (/tmp/gen_regression.py, 基于真实测试运行)",
+  "assets": {
+    "scripts_same": true,
+    "engine_same": true,
+    "script_count": 13,
+    "md5_detail": {
+      "assemble_result.py": true,
+      "draft_builder.py": true,
+      "elements_check.py": true,
+      "fact_ledger.py": true,
+      "grant_utils.py": true,
+      "init_result.py": true,
+      "innovation_engine.py": true,
+      "inspect_case.py": true,
+      "parse_materials.py": true,
+      "render_previews.py": true,
+      "report_builder.py": true,
+      "source_audit.py": true,
+      "validate_output.py": true
+    }
+  },
+  "behavior": {
+    "pipeline_exit0": true,
+    "validate": "PASS",
+    "validate_detail": "ALL PASS (8/8)，见端到端运行日志",
+    "test_env": "/tmp/v201_e2e（复制 synth-case/input 与 work/sections，synth-case 未修改）"
+  },
+  "contract": {
+    "result_json_keys_same": true,
+    "keys": [
+      "case_id",
+      "change_log",
+      "evidence_map",
+      "exceptions",
+      "manual_confirmations",
+      "output_contract",
+      "outputs",
+      "skill",
+      "stats",
+      "status",
+      "uncertainty"
+    ]
+  },
+  "single_change": "新增 examples/full_draft_example.md 完整成稿锚定示例 + SKILL.md 第7步首句指向该示例（其余字节级继承父辈）",
+  "example_self_check": {
+    "ok": true,
+    "checks": {
+      "banned_modifiers": {
+        "pass": true,
+        "detail": {
+          "hits": []
+        }
+      },
+      "planned_aspect": {
+        "pass": true,
+        "detail": {
+          "〔拟〕段落数": 11,
+          "bad": []
+        }
+      },
+      "numbered_items": {
+        "pass": true,
+        "detail": {
+          "目标": 3,
+          "研究内容": 3,
+          "步骤": 3
+        }
+      },
+      "total_length": {
+        "pass": true,
+        "detail": {
+          "total_chars": 2983,
+          "range": "2800-3200"
+        }
+      },
+      "lixiang_length": {
+        "pass": true,
+        "detail": {
+          "chars": 785,
+          "min": 600
+        }
+      },
+      "cross_reference": {
+        "pass": true,
+        "detail": {
+          "目标↔内容↔步骤 编号互指": true
+        }
+      }
+    }
+  }
+}

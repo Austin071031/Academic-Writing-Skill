@@ -1,0 +1,41 @@
+{
+  "version": "v2.0.0-快速主通道",
+  "parent": "v1.0.3-创新点差异定位 (attempt 90810, 66.67/100)",
+  "generated": "2026-11-25",
+  "testbed": "/tmp/v200-test（challenge-14/synth-case/input 副本，GRANT_INPUT_DIR/GRANT_OUTPUT_DIR 覆盖；synth-case/v1.0.x/shared-grant 未修改）",
+  "assets": {
+    "scripts_same": true,
+    "engine_same": true,
+    "scripts_compared": 13,
+    "diff_scripts": [],
+    "new_script": "scripts/sections_scaffold.py（唯一新增）"
+  },
+  "behavior": {
+    "pipeline_exit0": true,
+    "validate": "PASS",
+    "validate_detail": "ALL PASS (8/8)，见 /tmp/v200-test 运行日志",
+    "scaffold_idempotent": true,
+    "scaffold_idempotent_detail": "02_科学问题.md 手工追加〔F0001〕后重跑 scaffold：md5 不变、内容保留（6 生成/1 保留）；无〔F〕骨架重跑正常刷新",
+    "scaffold_candidates_nonempty": true,
+    "scaffold_candidates_detail": "7/7 骨架各 12 条候选；立项依据命中 paper 角色 citation/number（F0018/F0019/F0004/F0005…），研究基础命中 prior_work 角色 pub_mention（F0034 Joule/F0038 专利/F0036 基金号）",
+    "builder_on_skeletons": "PASS（纯骨架直接 draft_builder 不报错，paragraphs=14）",
+    "audits_fired_on_synth_defects": "source_audit high=1（材料外数字 99.9%）；innovation audit high=1（国际领先）medium=1；elements_check findings=6 —— 故意缺陷全部命中"
+  },
+  "contract": {
+    "result_json_keys_same": true,
+    "result_json_keys": [
+      "case_id",
+      "change_log",
+      "evidence_map",
+      "exceptions",
+      "manual_confirmations",
+      "output_contract",
+      "outputs",
+      "skill",
+      "stats",
+      "status",
+      "uncertainty"
+    ]
+  },
+  "single_change": "管线减负：新增 sections_scaffold.py 预生成七节骨架（含 FID 候选清单）+ SKILL.md 压缩为 8 步主通道与 ≤40 请求预算表；13 既有脚本零改动。"
+}

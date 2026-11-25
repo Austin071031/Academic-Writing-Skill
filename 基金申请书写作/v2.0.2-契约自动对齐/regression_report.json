@@ -1,0 +1,60 @@
+{
+  "version": "v2.0.2-契约自动对齐",
+  "parent": {
+    "version": "v1.0.3-创新点差异定位",
+    "attempt": 90810,
+    "score": 66.67
+  },
+  "generated": "2026-11-25",
+  "testbed": "challenge-14/synth-case/input 复制到 /tmp/v202-test1（未改动 synth-case/v1.0.x/shared-grant）",
+  "assets": {
+    "scripts_same": true,
+    "engine_same": true,
+    "md5_detail": {
+      "draft_builder.py": "same",
+      "elements_check.py": "same",
+      "fact_ledger.py": "same",
+      "grant_utils.py": "same",
+      "init_result.py": "same",
+      "inspect_case.py": "same",
+      "parse_materials.py": "same",
+      "render_previews.py": "same",
+      "report_builder.py": "same",
+      "source_audit.py": "same",
+      "validate_output.py": "same",
+      "innovation_engine.py": "same"
+    },
+    "changed_scripts": [
+      "assemble_result.py（最小补丁：fill_contract 优先读 work/contract_map.json）"
+    ],
+    "new_scripts": [
+      "contract_check.py"
+    ]
+  },
+  "behavior": {
+    "pipeline_exit0": true,
+    "validate": "PASS",
+    "contract_check_fields_ok": "4/4 (draft/mapping/report/evidence)",
+    "negative_case": "删除 element_mapping.md 重跑 → mapping missing、FAIL 清单打印、exit 0",
+    "no_contract_case": "无 output_contract_fields → 优雅跳过并记录 note，exit 0",
+    "assemble_result_default_compat": "无 contract_map.json 时与父辈输出字节级一致"
+  },
+  "contract": {
+    "result_json_keys_same": true,
+    "result_json_keys": [
+      "case_id",
+      "change_log",
+      "evidence_map",
+      "exceptions",
+      "manual_confirmations",
+      "output_contract",
+      "outputs",
+      "skill",
+      "stats",
+      "status",
+      "uncertainty"
+    ],
+    "assemble_compat_byte_identical": true
+  },
+  "single_change": "output_contract 契约自动对齐：新增 contract_check.py 逐字段语义映射并机检，assemble_result.py 最小补丁优先读 contract_map.json 回填，SKILL.md 在 validate 前加 contract_check 一步"
+}

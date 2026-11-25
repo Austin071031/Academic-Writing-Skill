@@ -1,0 +1,95 @@
+{
+  "version": "v2.0.4-增益自评卡",
+  "parent": {
+    "version": "v1.0.3-创新点差异定位",
+    "attempt": 90810,
+    "score": 66.67
+  },
+  "generated": "2026-11-25 (synth-case 真跑)",
+  "assets": {
+    "scripts_same": true,
+    "scripts_same_scope": "除 report_builder.py（本版唯一补丁对象）与 gain_card.py（本版新增）外 12 个脚本与父辈 md5 逐一相同",
+    "engine_same": true,
+    "md5_parent_vs_v2": {
+      "assemble_result.py": [
+        "31b556249c37fc06776729c8d0cc6ce1",
+        "31b556249c37fc06776729c8d0cc6ce1"
+      ],
+      "draft_builder.py": [
+        "74a286f06f7202ba01d6cc4fd9546247",
+        "74a286f06f7202ba01d6cc4fd9546247"
+      ],
+      "elements_check.py": [
+        "60e97a7ddf6d05504f839597557ca77e",
+        "60e97a7ddf6d05504f839597557ca77e"
+      ],
+      "fact_ledger.py": [
+        "0912d6c70e34f84396cd7725370fdf56",
+        "0912d6c70e34f84396cd7725370fdf56"
+      ],
+      "grant_utils.py": [
+        "72ed21b6b4cf527f029b2919df44b19d",
+        "72ed21b6b4cf527f029b2919df44b19d"
+      ],
+      "init_result.py": [
+        "d167f398a87873016ac613447c8bd79b",
+        "d167f398a87873016ac613447c8bd79b"
+      ],
+      "innovation_engine.py": [
+        "56b2281003cf8eda60bdae934f79fa07",
+        "56b2281003cf8eda60bdae934f79fa07"
+      ],
+      "inspect_case.py": [
+        "1e7216fdff488d031f26e402a77df5d6",
+        "1e7216fdff488d031f26e402a77df5d6"
+      ],
+      "parse_materials.py": [
+        "90b7c205f4fd333d687421f84da79094",
+        "90b7c205f4fd333d687421f84da79094"
+      ],
+      "render_previews.py": [
+        "edaa08d4a7ee405f1c4c3318d20273c3",
+        "edaa08d4a7ee405f1c4c3318d20273c3"
+      ],
+      "source_audit.py": [
+        "bbd3cee7c0ca0e5f13e98dd6f6e2365d",
+        "bbd3cee7c0ca0e5f13e98dd6f6e2365d"
+      ],
+      "validate_output.py": [
+        "e008ed9d51a6521d21387a1ca8a1cba4",
+        "e008ed9d51a6521d21387a1ca8a1cba4"
+      ]
+    }
+  },
+  "behavior": {
+    "pipeline_exit0": true,
+    "pipeline_note": "v2.0.4 全管线 14 步（init→inspect→parse→ledger→seed→复用 synth-case/work/sections→draft_builder→source_audit→elements_check→innovation audit→gain_card→report_builder→assemble→validate→render）在 /tmp/gc_v204 跑出 exit=0",
+    "validate": "PASS",
+    "validate_detail": "ALL PASS (8/8)",
+    "report_builder_without_gain_card_same_as_parent": true,
+    "report_builder_parity_note": "同一 work、同一参数、out 无 gain_card.md 时，v2 report_builder 产物与父辈 report.md 字节级一致（cmp 实测 YES）；out 有 gain_card.md 时 report.md 末尾追加「## 增益自评卡」节并嵌入全文（实测）",
+    "gain_card_idempotent": true,
+    "negative_tests": {
+      "empty_findings": "各 findings 清空重跑 → 全部类别 0 处（本案例未出现，机检仍全程开启），无编造缺陷（grep 99.9/国际领先 无命中）",
+      "no_change_log": "无 change_log.json → 「本次无修订记录」，exit=0",
+      "injected_defects_aggregated": "synth-case 故意注入缺陷被真实聚合：off_source_number 1 处（D-P008 99.9%）、banned_modifier 1 处（D-P010 国际领先）、hype_word 1 处、no_difference_statement 1 处、element_thin 6 处"
+    }
+  },
+  "contract": {
+    "result_json_keys_same": true,
+    "result_json_keys": [
+      "case_id",
+      "change_log",
+      "evidence_map",
+      "exceptions",
+      "manual_confirmations",
+      "output_contract",
+      "outputs",
+      "skill",
+      "stats",
+      "status",
+      "uncertainty"
+    ]
+  },
+  "single_change": "新增 scripts/gain_card.py 生成增益自评卡（反事实缺陷对照+修订闭环+机械劳动量化），report_builder.py 最小补丁在 report.md 末尾嵌入该卡；其余资产字节级继承父辈。"
+}
