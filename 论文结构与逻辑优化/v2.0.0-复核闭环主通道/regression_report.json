@@ -1,0 +1,62 @@
+{
+ "parent": {
+  "version": "v1.0.1-章节结构叙事",
+  "attempt": 89588,
+  "score": 66.0
+ },
+ "child": "v2.0.0-复核闭环主通道",
+ "single_change": "新增 scripts/review_helper.py（复核闭环 pack/apply）+ SKILL.md 第7步重构为逐条裁决协议（含预算表）；其余资产守恒",
+ "target_gap": "评审口径 more complete and rigorous：Agent 判断层未充分利用（实际效果40/使用增益25）",
+ "script_conservation": [
+  {
+   "file": "assemble_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "init_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "inspect_case.py",
+   "md5_identical": true
+  },
+  {
+   "file": "parse_manuscript.py",
+   "md5_identical": true
+  },
+  {
+   "file": "report_builder.py",
+   "md5_identical": true
+  },
+  {
+   "file": "scanutil.py",
+   "md5_identical": true
+  },
+  {
+   "file": "section_flow.py",
+   "md5_identical": true
+  },
+  {
+   "file": "six_scan.py",
+   "md5_identical": true
+  },
+  {
+   "file": "validate_output.py",
+   "md5_identical": true
+  }
+ ],
+ "added_scripts": [
+  "review_helper.py"
+ ],
+ "regression": {
+  "synthetic_case": "synthetic-struct-01",
+  "pipeline": "init→inspect→parse→six_scan→section_flow→report_builder→review_pack→adjudicate→apply→assemble→validate",
+  "validate": "PASS",
+  "findings_before_adjudication": 6,
+  "after": 5,
+  "rejected": 1,
+  "revised": 1,
+  "overall_diagnosis_written": true,
+  "all_scripts_py_compile": "PASS"
+ }
+}

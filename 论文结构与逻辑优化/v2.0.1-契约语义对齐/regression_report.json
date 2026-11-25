@@ -1,0 +1,63 @@
+{
+ "parent": {
+  "version": "v1.0.1-章节结构叙事",
+  "attempt": 89588,
+  "score": 66.0
+ },
+ "child": "v2.0.1-契约语义对齐",
+ "single_change": "契约逐字段语义对齐：新增 scripts/contract_check.py（output_contract 逐字段与产物职责描述关键词重叠打分，输出 work/contract_map.json）+ 补丁 assemble_result.py（契约字段回填为 {artifact, summary, coverage}，missing 登记 uncertainty，无 contract_map.json 回退原 alias 逻辑）+ 补丁 validate_output.py（契约字段 null FAIL、coverage=missing/缺标记 WARN）；其余资产守恒",
+ "target_gap": "评审口径 Solid — refine for a more complete and rigorous solution：output_contract 逐字段语义化填充缺口（任务完成度15分/可核验5分）——v1 alias 表笼统映射，字段语义不符即填错或填 None",
+ "script_conservation": [
+  {
+   "file": "init_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "inspect_case.py",
+   "md5_identical": true
+  },
+  {
+   "file": "parse_manuscript.py",
+   "md5_identical": true
+  },
+  {
+   "file": "scanutil.py",
+   "md5_identical": true
+  },
+  {
+   "file": "six_scan.py",
+   "md5_identical": true
+  },
+  {
+   "file": "section_flow.py",
+   "md5_identical": true
+  },
+  {
+   "file": "report_builder.py",
+   "md5_identical": true
+  }
+ ],
+ "added_scripts": [
+  "contract_check.py"
+ ],
+ "patched_scripts": [
+  "assemble_result.py",
+  "validate_output.py"
+ ],
+ "regression": {
+  "synthetic_case": "synthetic-struct-01",
+  "pipeline": "init→inspect→parse→six_scan→section_flow→report_builder→contract_check→assemble→validate",
+  "validate": "PASS",
+  "contract_check_stdout": "[contract_check] fields=3 filled=3 partial=0 missing=0",
+  "contract_map": {
+   "report": {"mapped_artifact": "diagnosis_report.md", "score": 0.75, "coverage": "filled"},
+   "evidence": {"mapped_artifact": "evidence_map.json", "score": 0.75, "coverage": "filled"},
+   "uncertainties": {"mapped_artifact": "result.json", "score": 0.75, "coverage": "filled"}
+  },
+  "result_contract_fields_new_structure": true,
+  "edge_case_list_form_contract_and_missing_uncertainty_registered": true,
+  "fallback_alias_without_contract_map": "PASS",
+  "all_scripts_py_compile": "PASS",
+  "pycache_removed": true
+ }
+}

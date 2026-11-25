@@ -1,0 +1,73 @@
+{
+ "parent": {
+  "version": "v1.0.1-章节结构叙事",
+  "attempt": 89588,
+  "score": 66.0
+ },
+ "child": "v2.0.3-增益自证卡",
+ "single_change": "新增 scripts/gain_card.py（增益自证卡：机器可复算指标 + 基础 Agent 反事实对照，写入 gain_card.md/json 并追加报告末尾自证卡节）+ assemble_result.py 仅 ARTIFACTS 列表增加 gain_card.md/gain_card.json 一行；其余资产守恒",
+ "target_gap": "评分细则 使用增益25（质量增益15+效率增益5+增益可验证5）/ 创新增益15 要求证明相对基础 Agent 的增量，v1 只交付诊断结果未自证增益",
+ "script_conservation": [
+  {
+   "file": "init_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "inspect_case.py",
+   "md5_identical": true
+  },
+  {
+   "file": "parse_manuscript.py",
+   "md5_identical": true
+  },
+  {
+   "file": "report_builder.py",
+   "md5_identical": true
+  },
+  {
+   "file": "scanutil.py",
+   "md5_identical": true
+  },
+  {
+   "file": "section_flow.py",
+   "md5_identical": true
+  },
+  {
+   "file": "six_scan.py",
+   "md5_identical": true
+  },
+  {
+   "file": "validate_output.py",
+   "md5_identical": true
+  }
+ ],
+ "patched_scripts": [
+  {
+   "file": "assemble_result.py",
+   "change": "仅 ARTIFACTS 列表增加 gain_card.md 与 gain_card.json（一行补丁，属本单点一部分）"
+  }
+ ],
+ "added_scripts": [
+  "gain_card.py"
+ ],
+ "regression": {
+  "synthetic_case": "synthetic-struct-01",
+  "pipeline": "init→inspect→parse→six_scan→section_flow→report_builder→gain_card→assemble→validate",
+  "validate": "PASS",
+  "findings": 6,
+  "gain_card_metrics": {
+   "dimension_coverage": "6/6",
+   "anchor_rate_pct": 66.7,
+   "actionable_rate_pct": 100.0,
+   "location_granularity": {"句子级": 4, "段落级": 0, "全文级": 2},
+   "script_mechanical_steps": 2,
+   "agent_judgment_steps": 0,
+   "manual_minutes_est": 0.2,
+   "note": "全部数值与 findings.json/stats.json/change_log.json 手工复算一致；效率栏为估计"
+  },
+  "report_gain_section_present": true,
+  "gain_card_idempotent_rerun": true,
+  "result_outputs_contains_gain_card": true,
+  "all_scripts_py_compile": "PASS"
+ }
+}

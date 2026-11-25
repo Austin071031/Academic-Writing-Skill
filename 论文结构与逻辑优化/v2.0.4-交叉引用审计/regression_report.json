@@ -1,0 +1,87 @@
+{
+ "parent": {
+  "version": "v1.0.1-章节结构叙事",
+  "attempt": 89588,
+  "score": 66.0
+ },
+ "child": "v2.0.4-交叉引用审计",
+ "single_change": "scripts/section_flow.py 新增 xref_audit 交叉引用完整性审计（图/表/公式/章节/文献编号的引用侧—定义侧双向核对；悬空 high、未被引用条目 medium、编号跳号 low；dimension=argument_chain；section_map.json 增加 xref_audit 键；findings 合并按 severity 稳定截断 ≤15）；其余资产守恒",
+ "target_gap": "评审口径 more complete and rigorous：评分细则'结果正确性'要求不漏真实断裂、题面'链得通'要求跨章节呼应成立；v1 引擎不检查交叉引用完整性（'见图3'无图3、引用[5]文献表仅4条、条目从未被引等真实稿件高频硬伤漏检）",
+ "script_conservation": [
+  {
+   "file": "assemble_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "init_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "inspect_case.py",
+   "md5_identical": true
+  },
+  {
+   "file": "parse_manuscript.py",
+   "md5_identical": true
+  },
+  {
+   "file": "report_builder.py",
+   "md5_identical": true
+  },
+  {
+   "file": "scanutil.py",
+   "md5_identical": true
+  },
+  {
+   "file": "six_scan.py",
+   "md5_identical": true
+  },
+  {
+   "file": "validate_output.py",
+   "md5_identical": true
+  }
+ ],
+ "patched_scripts": [
+  {
+   "file": "section_flow.py",
+   "md5_identical": false,
+   "parent_md5": "787979428b5f198babaa1ea8c80645b9",
+   "child_md5": "c2f122b867d548360aa750c19b9a2484",
+   "change_summary": "新增 g) 交叉引用完整性审计：引用侧（正文句子排除参考文献章）正则提取 图|表|Fig|Figure|Table+数字、式|公式|Eq+(n)、第N章节/Section X.Y、[n]文献（区间展开）；定义侧锚点=独立图注段（单句段、编号后随非数字文本或冒号、无句末标点）+段末(n)/\\tag{n}公式锚点+标题数字编号+参考文献条目计数（段内 findall，规避解析合并行）；悬空四类 high（op=add '补定义或修正编号'）、文献条目未被引用 medium（op=narrow '删除或在正文补引'）、图表编号跳号 low（仅无悬空时提示）；每类上限3条；无参考文献表/标题无编号时对应审计跳过并记 xref_audit.skipped；section_map.json 增 xref_audit 键；findings 合并后按 severity 稳定截断≤15并重编号（add() 不再提前截断）；打印行尾部追加 xref 摘要；文档字符串与大纲头版本号同步"
+  }
+ ],
+ "added_scripts": [],
+ "regression": {
+  "synthetic_case_t3": {
+   "case_id": "synthetic-xref-t3",
+   "source": "evaluation/test_texts.md T3（含'见图3'但只定义图1-2、引用[5]但文献表4条、文献[2]从未被引用、表编号1,3跳号、式(7)与第5节悬空）",
+   "pipeline": "init→inspect→parse→six_scan→section_flow→report_builder→assemble→validate",
+   "validate": "PASS",
+   "xref_hits": [
+    "E-01 argument_chain high 图表引用悬空（图3；已定义图={1,2}）",
+    "E-02 argument_chain high 公式引用悬空（式(7)；无公式锚点）",
+    "E-03 argument_chain high 章节引用悬空（第5节；标题编号={1,2,3,4}）",
+    "E-04 argument_chain high 文献引用悬空（[5]；文献表4条）",
+    "E-05 argument_chain medium 文献条目未被引用（[2]；正文引用={1,3,4,5}）",
+    "E-06 argument_chain low 图表编号不连续（表 {1,3} 缺 2）"
+   ],
+   "section_map_has_xref_audit_key": true,
+   "no_new_false_positive_on_original_checks": "逆序对=0 核心缺失=0 未定义缩写=0（顺序正常稿不再产生原有类误报）"
+  },
+  "synthetic_case_w05test": {
+   "case_id": "synthetic-struct-01",
+   "source": "/tmp/w05test/input",
+   "pipeline": "init→inspect→parse→six_scan→section_flow→report_builder→assemble→validate",
+   "validate": "PASS",
+   "xref_hits": [
+    "argument_chain high 图表引用悬空（'图1 显示循环曲线'引用图1但全文无图注定义——真实缺陷，允许命中并作为回归证据）"
+   ],
+   "no_new_false_positive": "文献悬空/未引用审计因无参考文献表自动跳过（xref_audit.skipped 注明）；公式/章节审计零命中；原有 finding（核心章节缺失：方法）保持",
+   "print_tail": "xref: figrefs=1 dangling=1 citerefs=4 dangling=0 uncited=0"
+  },
+  "t1_t2_sanity": "T1（缺陷稿）原有 10 条全保留 + 图表悬空×3（上限截断，共6编号悬空）+ 文献[1]未被引用 = 14 条；T2（正常稿）仅新增 图1/表1 文本层无图注的悬空候选×2（已在 test_texts.md 与 failure_modes.md 标注为需第7步裁决的'图注不在文本层'误报源）",
+  "truncation_path": "压力稿（6逆序对+12 xref high）验证：>15 时按 severity 稳定截断至 15 条且 ID 重编号连续",
+  "all_scripts_py_compile": "PASS",
+  "pycache_removed": true
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "parent": {
+  "version": "v1.0.1-章节结构叙事",
+  "attempt": 89588,
+  "score": 66.0
+ },
+ "child": "v2.0.2-改后对照预览",
+ "single_change": "新增 scripts/apply_preview.py（report_builder 之后的独立后处理）：为每条 finding（≤12，high 优先）按 op 确定性模板生成改前/改后对照预览（标注'建议示例（非最终文本）'），注入 diagnosis_report.md 与 edit_plan.json 的 preview 字段并落盘 work/previews.json；其余资产守恒",
+ "target_gap": "题面'改得动'：v1 已给 op+instruction 但仍是文字指令，作者需自行想象改后形态；对照预览使改得动/任务完成度/质量增益可直观核验",
+ "script_conservation": [
+  {
+   "file": "assemble_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "init_result.py",
+   "md5_identical": true
+  },
+  {
+   "file": "inspect_case.py",
+   "md5_identical": true
+  },
+  {
+   "file": "parse_manuscript.py",
+   "md5_identical": true
+  },
+  {
+   "file": "report_builder.py",
+   "md5_identical": true
+  },
+  {
+   "file": "scanutil.py",
+   "md5_identical": true
+  },
+  {
+   "file": "section_flow.py",
+   "md5_identical": true
+  },
+  {
+   "file": "six_scan.py",
+   "md5_identical": true
+  },
+  {
+   "file": "validate_output.py",
+   "md5_identical": true
+  }
+ ],
+ "added_scripts": [
+  "apply_preview.py"
+ ],
+ "regression": {
+  "synthetic_case": "synthetic-struct-01",
+  "pipeline": "init→inspect→parse→six_scan→section_flow→report_builder→apply_preview→assemble→validate",
+  "validate": "PASS",
+  "findings_total": 6,
+  "previews_generated": 6,
+  "report_injected_lines": 6,
+  "edit_plan_ops_with_preview": 6,
+  "narrow_finding_previewed": "D6-01 结论数字在正文中无出处（性能提升 91.0%）",
+  "qualify_finding_previewed": "D6-02/D6-03 绝对化表述（完全解决/所有体系都适用）",
+  "idempotent_rerun": "二次运行 previews=6 injected=6，报告无重复注入行",
+  "apply_preview_stdout": "[apply_preview] previews=6 injected=6",
+  "all_scripts_py_compile": "PASS",
+  "known_warn": "validate_output 对六维未全覆盖给出 WARN（合成稿过短仅命中 3 维，属父辈既有行为，报告中有'未检出'说明）"
+ }
+}
