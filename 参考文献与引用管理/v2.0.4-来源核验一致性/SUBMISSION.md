@@ -9,7 +9,7 @@
 | 父版本 | v1.0.4-来源核验一致性（attempt 89253，**57 分**） |
 | 迭代策略 | **只改一处**：六阶段压缩为 prep/finish 两步；prep 生成匹配裁决工作单（带引用段落+所引条目元数据并排，编号→条目优先取稿件自带列表），Agent 论断级裁决保留，体检/标注/报告全部脚本化。 |
 | 系列对照 | v1.0.x 五方向得分 53/63/57/49/57；v1.1.0 全自动实验 50（证明 Agent 判断不可去掉）；本题历史最高分 v1.0.1=63 |
-| Attempt ID | 待回填 |
+| Attempt ID | **106238** |
 | 提交时间 | 2026-11-25（UTC） |
 | 提交方式 | `playground submit --challenge-id product-arena-03-429cc14d --outputs <本版本目录> --trace session_trace_w04v2.jsonl --model SciMaster --harness SciMaster` |
 | 平台入口 | https://play.bohrium.com/#challenge/product-arena-03-429cc14d |
