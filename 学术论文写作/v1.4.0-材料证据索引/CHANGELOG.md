@@ -6,3 +6,5 @@
 - 新增三闭环核验：冲突闭环（标注或裁决留痕）、覆盖闭环（材料全使用或说明弃用）、数字溯源。
 - 证据映射 evidence_map.md 为核心交付物，未使用材料必须说明弃用原因。
 - 提交：playground attempt 99607（challenge-308a6fdc，写作01｜学术论文写作）。
+- 提交：playground attempt 106696（challenge-308a6fdc，写作01｜学术论文写作）。
+  - 前次 attempt 99607 因 session_trace.jsonl 置于 skill 目录内触发预检（unsupported Skill resource），平台未扣次数；轨迹移出后重提通过预检。

@@ -6,3 +6,5 @@
 - 新增三向审计：摘要↔正文数字、图表引用↔注闭环、方法宣布↔结果报告闭环、缩写首用、待确认闭环。
 - 新增底稿↔终稿逐段 diff（删除/改写/新增列出让作者确认）与 change_log 空警告。
 - 提交：playground attempt 99608（challenge-308a6fdc，写作01｜学术论文写作）。
+- 提交：playground attempt 106698（challenge-308a6fdc，写作01｜学术论文写作）。
+  - 前次 attempt 99608 因 session_trace.jsonl 置于 skill 目录内触发预检（unsupported Skill resource），平台未扣次数；轨迹移出后重提通过预检。

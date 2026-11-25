@@ -6,3 +6,5 @@
 - 新增引用五检：悬空引用 FAIL、装饰性未引用条目 FAIL、编号连续性、格式混用、字段缺失 WARN。
 - 新增论断—引用绑定表：带所在句上下文，Agent 逐条语义复核后方可 success。
 - 提交：playground attempt 99605（challenge-308a6fdc，写作01｜学术论文写作）。
+- 提交：playground attempt 106692（challenge-308a6fdc，写作01｜学术论文写作）。
+  - 前次 attempt 99605 因 session_trace.jsonl 置于 skill 目录内触发预检（unsupported Skill resource），平台未扣次数；轨迹移出后重提通过预检。

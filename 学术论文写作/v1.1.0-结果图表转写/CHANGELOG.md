@@ -7,3 +7,5 @@
 - 新增数字回写核验：未命中台账即 FAIL；【计算值：算式】豁免机制（推导值合规化）。
 - 新增图注规范检查（引用必有注）与因果措辞警告（无检验禁"显著/导致"）。
 - 提交：playground attempt 99604（challenge-308a6fdc，写作01｜学术论文写作）。
+- 提交：playground attempt 106688（challenge-308a6fdc，写作01｜学术论文写作）。
+  - 前次 attempt 99604 因 session_trace.jsonl 置于 skill 目录内触发预检（unsupported Skill resource），平台未扣次数；轨迹移出后重提通过预检。
